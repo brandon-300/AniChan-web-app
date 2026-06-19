@@ -1,15 +1,17 @@
 # AniChan-web-app
 
-Your ultimate anime tracking and community platform.
+Your ultimate anime tracking and community platform with full glassmorphism design, realtime chat with voice notes, WebRTC calls via Supabase Broadcast, admin panel, suspension system, etc.
 
-## Features
-- Dark glassmorphism design
-- Supabase backend with realtime
-- Full admin panel
-- Real-time chat + WebRTC calls
-- Advanced user management with suspension/deletion flows
+## Tech Stack
+- Vanilla HTML/CSS/JS + Tailwind
+- Supabase (Auth, Realtime, Postgres, Storage)
+- Jikan API
+- Vercel Serverless
 
 ## Setup
-1. Set environment variables on Vercel
-2. Configure Supabase tables and RLS
-3. Deploy
+1. Clone repo
+2. Deploy to Vercel
+3. Set up Supabase tables (anime, profiles, messages, etc.)
+4. Configure env vars on Vercel
+
+Live demo coming soon!
