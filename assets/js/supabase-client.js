@@ -1,6 +1,6 @@
 // Supabase Client Configuration
-const SUPABASE_URL = 'https://your-supabase-url.supabase.co';
-const SUPABASE_ANON_KEY = 'your-anon-key-here';
+const SUPABASE_URL = 'https://yphxpgssdqboufbgazwi.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_eKe5liyr5Mc-mumZbXLuZw_Pt3-KVm0';
 
 let supabase;
 
