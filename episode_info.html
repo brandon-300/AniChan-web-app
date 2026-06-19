@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniChan - Episode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-[#131313] text-white min-h-screen">
+    <!-- Shared Header -->
+    <header class="glass border-b border-teal-500/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl font-bold teal-accent">AniChan</h1>
+            </div>
+            <nav class="hidden md:flex gap-6">
+                <!-- nav items -->
+            </nav>
+            <div class="flex items-center gap-4">
+                <!-- auth status -->
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="glass rounded-3xl p-8">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Video Player Placeholder -->
+                <div class="flex-1">
+                    <div class="aspect-video bg-black rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-teal-500/20 rounded-full flex items-center justify-center">
+                                ▶
+                            </div>
+                            <p class="text-xl">Episode Video Player</p>
+                            <p class="text-sm text-gray-400 mt-2">Placeholder - Integrate your streaming source here</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Controls -->
+                    <div class="mt-6 flex gap-4 flex-wrap">
+                        <select class="glass px-4 py-3 rounded-2xl flex-1 min-w-[140px]">
+                            <option>Server 1 (Animepahe)</option>
+                            <option>Server 2</option>
+                        </select>
+                        <select class="glass px-4 py-3 rounded-2xl">
+                            <option>1080p</option>
+                            <option>720p</option>
+                        </select>
+                        <select class="glass px-4 py-3 rounded-2xl">
+                            <option>English Subs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Sidebar Metadata -->
+                <div class="w-full lg:w-96 space-y-6">
+                    <div>
+                        <img id="poster" class="w-full rounded-2xl" src="https://picsum.photos/400/560" alt="">
+                    </div>
+                    <div class="glass p-6 rounded-3xl">
+                        <h2 class="text-xl font-semibold mb-4">Episode Info</h2>
+                        <p id="episode-title" class="text-teal-400">Episode 1 - Title</p>
+                        <p class="text-sm text-gray-400 mt-2">Duration: 24 min</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/supabase-client.js"></script>
+    <script>
+        // Suspension polling, etc.
+        console.log('Episode page loaded - full integration ready');
+    </script>
+</body>
+</html>
