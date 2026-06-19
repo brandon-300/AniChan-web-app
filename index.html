@@ -1,49 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AniChan - Anime Community</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<title>AniChan - Home</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+  body { background-color: #131313; color: #fff; }
+  .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+</style>
 </head>
-<body class="bg-gray-950 text-white">
-    <nav class="bg-black border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-8">
-                <a href="index.html" class="text-3xl font-bold text-red-500">AniChan</a>
-                <div class="flex gap-6">
-                    <a href="index.html" class="hover:text-red-400">Home</a>
-                    <a href="watchlist.html" class="hover:text-red-400">Watchlist</a>
-                    <a href="chat.html" class="hover:text-red-400">Chat</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <button onclick="toggleSearch()" class="px-4 py-2 bg-gray-900 rounded-full">Search</button>
-                <button onclick="login()" class="px-6 py-2 bg-red-600 hover:bg-red-700 rounded-full">Login</button>
-            </div>
-        </div>
-    </nav>
-
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        <h1 class="text-5xl font-bold mb-8">Discover Anime</h1>
-        
-        <!-- Search Bar -->
-        <div id="search-container" class="hidden mb-8">
-            <input id="search-input" 
-                   type="text" 
-                   placeholder="Search anime..." 
-                   class="w-full max-w-2xl px-6 py-4 bg-gray-900 border border-gray-700 rounded-2xl text-lg focus:outline-none focus:border-red-500">
-        </div>
-
-        <!-- Anime Grid -->
-        <div id="anime-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            <!-- Populated by JS -->
-        </div>
-    </main>
-
-    <script src="assets/js/supabase-client.js"></script>
-    <script src="assets/js/api.js"></script>
-    <script src="assets/js/main.js"></script>
+<body class="min-h-screen">
+  <div id="app">Loading AniChan...</div>
+  <script src="assets/js/supabase-client.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
