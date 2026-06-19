@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime - AniChan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-950 text-white">
+    <nav class="bg-black border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-3xl font-bold text-red-500">AniChan</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8" id="anime-detail">
+        <!-- Loaded by JS -->
+        <div class="text-center py-20">Loading anime details...</div>
+    </main>
+
+    <script src="assets/js/supabase-client.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple anime detail loader
+        async function loadAnimeDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (!id) {
+                document.getElementById('anime-detail').innerHTML = '<p class="text-center">No anime ID provided.</p>';
+                return;
+            }
+            
+            const anime = await api.getAnimeById(id);
+            if (!anime) return;
+            
+            const container = document.getElementById('anime-detail');
+            container.innerHTML = `
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/3">
+                        <img src="${anime.images.jpg.large_image_url}" class="rounded-3xl w-full shadow-2xl" alt="${anime.title}">
+                    </div>
+                    <div class="lg:w-2/3">
+                        <h1 class="text-5xl font-bold mb-4">${anime.title}</h1>
+                        <div class="flex gap-4 mb-8">
+                            <span class="px-4 py-1 bg-red-600 rounded-full text-sm">${anime.type}</span>
+                            <span class="px-4 py-1 bg-gray-800 rounded-full text-sm">${anime.score} ★</span>
+                        </div>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-8">${anime.synopsis || 'No synopsis available.'}</p>
+                        
+                        <button onclick="addToWatchlist(${anime.mal_id})" 
+                                class="px-8 py-4 bg-red-600 hover:bg-red-700 rounded-2xl font-semibold text-lg">
+                            Add to Watchlist
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        window.addToWatchlist = (id) => {
+            alert(`Added anime ${id} to watchlist! (Supabase integration next)`);
+        };
+        
+        document.addEventListener('DOMContentLoaded', loadAnimeDetail);
+    </script>
+</body>
+</html>
